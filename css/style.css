@@ -1,0 +1,237 @@
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html, body {
+  height: 100%;
+  font-family: "Cinzel", Georgia, serif;
+  background-color: #0b0a0b;         
+  color: #efe8e4;                     
+  line-height: 1.5;
+}
+
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+main {
+  flex: 1;
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.15));
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+}
+
+header {
+  text-align: center;
+  background: linear-gradient(90deg, #240d19, #12080e);
+  padding: 25px 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  position: relative;
+}
+header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #8b0f0f, #4b1030);
+}
+header h1 {
+  font-size: 2rem;
+  color: #fff;
+  text-shadow: 0 4px 8px rgba(0,0,0,0.6);
+}
+header p {
+  color: #b8aead;
+  max-width: 700px;
+  margin: 10px auto;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 12px;
+}
+nav li {
+  margin: 6px 10px;
+}
+nav a {
+  text-decoration: none;
+  color: #ccc;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+nav a:hover,
+nav a:focus {
+  background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(0,0,0,0.2));
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+}
+
+
+section {
+  margin-top: 30px;
+  padding: 15px;
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 8px;
+  background: rgba(255,255,255,0.01);
+  position: relative;
+}
+section::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+  background: linear-gradient(180deg, rgba(75,16,48,0.06), rgba(0,0,0,0.3));
+  opacity: 0.7;                 
+  pointer-events: none;
+}
+section h2 {
+  color: #fff;
+  margin-bottom: 10px;
+}
+section h3, h4 {
+  color: #d4c9c8;
+  margin: 8px 0;
+}
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10px 0;
+}
+caption {
+  caption-side: top;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 8px;
+}
+th, td {
+  padding: 8px 10px;
+  border: 1px solid rgba(255,255,255,0.1);
+  text-align: center;
+}
+thead {
+  background: linear-gradient(90deg, #4b1030, #8b0f0f);
+  color: #fff;
+}
+tbody tr:nth-child(odd) {
+  background: rgba(255,255,255,0.02);
+}
+
+
+form {
+  background: rgba(255,255,255,0.02);
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+}
+fieldset {
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 12px;
+  border-radius: 6px;
+}
+legend {
+  padding: 0 8px;
+  color: #fff;
+}
+label {
+  display: block;
+  margin-top: 8px;
+  color: #d6cfd0;
+}
+input, select, textarea, button {
+  width: 100%;
+  margin-top: 6px;
+  padding: 8px;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 6px;
+  background: rgba(255,255,255,0.05);
+  color: #fff;
+}
+input:focus, select:focus, textarea:focus {
+  border-color: #8b0f0f;
+  box-shadow: 0 0 8px rgba(139,15,15,0.4);
+  outline: none;
+}
+button {
+  background: linear-gradient(180deg, #8b0f0f, #4b1030);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.7);
+}
+
+
+code {
+  background: rgba(255,255,255,0.05);
+  padding: 2px 5px;
+  border-radius: 4px;
+  color: #d6cfd0;
+}
+a[href^="mailto"]::before {
+  content: "✉ ";
+  color: #8b0f0f;
+}
+a[href^="tel"]::before {
+  content: "☎ ";
+  color: #8b0f0f;
+}
+
+
+::selection {
+  background: rgba(139,15,15,0.8);
+  color: #fff;
+}
+
+
+footer {
+  text-align: center;
+  padding: 15px;
+  background: #12080e;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  color: #b8aead;
+}
+
+section::after {
+  content: "";
+  position: absolute;
+  left: 20px;
+  bottom: -14px;
+  width: 40px;
+  height: 25px;
+  background: radial-gradient(circle at 50% 0%, rgba(0,0,0,0.5), transparent 70%);
+  filter: blur(6px);
+  opacity: 0.7;
+}
+
+a[target="_blank"]:hover {
+  background: linear-gradient(90deg, rgba(139,15,15,0.3), rgba(75,16,48,0.3));
+}
+
+section:nth-child(even) {
+  background: rgba(255,255,255,0.015);
+}
+
+@media (max-width: 768px) {
+  nav ul { flex-direction: column; }
+  main { width: 95%; }
+}

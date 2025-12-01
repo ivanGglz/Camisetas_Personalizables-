@@ -1,0 +1,439 @@
+/* =========================
+   RESET BÁSICO Y TIPOGRAFÍA
+   ========================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Cinzel", Georgia, serif;
+  background-color: #0b0a0b; /* fondo oscuro por defecto */
+  color: #efe8e4;
+  line-height: 1.5;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* ================
+   LAYOUT GENERAL
+   ================ */
+main {
+  flex: 1;
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(0, 0, 0, 0.15)
+  );
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+}
+
+/* ============
+   HEADER & NAV
+   ============ */
+header {
+  text-align: center;
+  background: linear-gradient(90deg, #240d19, #12080e);
+  padding: 25px 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
+}
+
+header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #8b0f0f, #4b1030);
+}
+
+header h1 {
+  font-size: 2rem;
+  color: #fff;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+}
+
+header p {
+  color: #b8aead;
+  max-width: 700px;
+  margin: 10px auto;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+nav li {
+  margin: 6px 10px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #ccc;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+nav a:hover,
+nav a:focus {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.05),
+    rgba(0, 0, 0, 0.2)
+  );
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+}
+
+/* =========
+   SECCIONES
+   ========= */
+section {
+  margin-top: 30px;
+  padding: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.01);
+  position: relative;
+}
+
+section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(75, 16, 48, 0.06),
+    rgba(0, 0, 0, 0.3)
+  );
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+section::after {
+  content: "";
+  position: absolute;
+  left: 20px;
+  bottom: -14px;
+  width: 40px;
+  height: 25px;
+  background: radial-gradient(
+    circle at 50% 0%,
+    rgba(0, 0, 0, 0.5),
+    transparent 70%
+  );
+  filter: blur(6px);
+  opacity: 0.7;
+}
+
+section h2 {
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+section h3,
+section h4 {
+  color: #d4c9c8;
+  margin: 8px 0;
+}
+
+/* alternar muy sutil entre secciones */
+section:nth-child(even) {
+  background: rgba(255, 255, 255, 0.015);
+}
+
+/* =======
+   TABLAS
+   ======= */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10px 0;
+}
+
+caption {
+  caption-side: top;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+th,
+td {
+  padding: 8px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+}
+
+thead {
+  background: linear-gradient(90deg, #4b1030, #8b0f0f);
+  color: #fff;
+}
+
+tbody tr:nth-child(odd) {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+/* =========
+   FORMULARIOS
+   ========= */
+form {
+  background: rgba(255, 255, 255, 0.02);
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+}
+
+fieldset {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 12px;
+  border-radius: 6px;
+}
+
+legend {
+  padding: 0 8px;
+  color: #fff;
+}
+
+label {
+  display: block;
+  margin-top: 8px;
+  color: #d6cfd0;
+}
+
+input,
+select,
+textarea,
+button {
+  width: 100%;
+  margin-top: 6px;
+  padding: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #8b0f0f;
+  box-shadow: 0 0 8px rgba(139, 15, 15, 0.4);
+  outline: none;
+}
+
+button {
+  background: linear-gradient(180deg, #8b0f0f, #4b1030);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
+}
+
+/* =====
+   OTROS
+   ===== */
+code {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2px 5px;
+  border-radius: 4px;
+  color: #d6cfd0;
+}
+
+a[href^="mailto"]::before {
+  content: "✉ ";
+  color: #8b0f0f;
+}
+
+a[href^="tel"]::before {
+  content: "☎ ";
+  color: #8b0f0f;
+}
+
+::selection {
+  background: rgba(139, 15, 15, 0.8);
+  color: #fff;
+}
+
+a[target="_blank"]:hover {
+  background: linear-gradient(
+    90deg,
+    rgba(139, 15, 15, 0.3),
+    rgba(75, 16, 48, 0.3)
+  );
+}
+
+/* ======
+   FOOTER
+   ====== */
+footer {
+  text-align: center;
+  padding: 15px;
+  background: #12080e;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  color: #b8aead;
+}
+
+/* ==========
+   RESPONSIVO
+   ========== */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+  }
+
+  main {
+    width: 95%;
+  }
+}
+
+/* =====================
+      MODO CLARO
+   ===================== */
+
+.modo-btn {
+  margin-top: 15px;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  background: #ffffff22;
+  color: #fff;
+  backdrop-filter: blur(4px);
+  transition: 0.3s;
+}
+
+.modo-btn:hover {
+  background: #00000044;
+}
+
+/* ----- Cambios globales ----- */
+body.modo-claro {
+  background: #f4f4f4;   /* fondo general clarito */
+  color: #000000;        /* texto oscuro */
+}
+
+/* MAIN y secciones */
+body.modo-claro main {
+  background: #ffffff;   /* tarjeta blanca en el centro */
+  color: #000000;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+body.modo-claro section {
+  background: #ffffff;   /* secciones blancas, sin borde */
+  border: none;
+}
+
+body.modo-claro section::before,
+body.modo-claro section::after {
+  background: none;
+  box-shadow: none;
+}
+
+/* HEADER */
+body.modo-claro header {
+  background: linear-gradient(90deg, #e9e9e9, #d2d2d2);
+  color: #000000;
+}
+
+body.modo-claro header h1 {
+  color: #000000;
+  text-shadow: none;
+}
+
+body.modo-claro header p {
+  color: #000000;
+}
+
+/* NAV */
+body.modo-claro nav a {
+  color: #000000;
+}
+
+body.modo-claro nav a:hover {
+  background: #ddd;
+  color: #000;
+}
+
+/* Títulos de secciones en modo claro */
+body.modo-claro section h2,
+body.modo-claro section h3,
+body.modo-claro section h4 {
+  color: #000;
+}
+
+/* TABLAS en modo claro */
+body.modo-claro table {
+  border-color: #999;
+}
+
+body.modo-claro thead {
+  background: #d6d6d6;
+  color: #000;
+}
+
+body.modo-claro tbody tr:nth-child(odd) {
+  background: #f2f2f2;
+}
+
+/* FORMULARIOS en modo claro */
+body.modo-claro form label {
+  color: #000;
+}
+
+body.modo-claro input,
+body.modo-claro select,
+body.modo-claro textarea,
+body.modo-claro button {
+  background: #fff;
+  color: #000;
+  border: 1px solid #bbb;
+}
+
+body.modo-claro input:focus,
+body.modo-claro select:focus,
+body.modo-claro textarea:focus {
+  border-color: #8b0f0f;
+  box-shadow: none;
+}
+
+/* BARRA LATERAL (ASIDE) */
+/* modo oscuro: si quieres que exista, dale fondo oscuro */
+aside {
+  background: #0b0a0b;
+}
+
+/* en modo claro la OCULTAMOS para que no salga el cuadro negro */
+body.modo-claro aside {
+  display: none;
+}
